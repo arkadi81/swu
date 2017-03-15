@@ -4,17 +4,27 @@
 	<title></title>
 </head>
 <body>
-	<h1>welcome to scheduler app</h1>
-	<div id = container>
-	<button onclick=newEvent()> schedule new event</button>
 
-	<!-- list of existing events here -->
-	<?php include('events.php'); ?>
-	</div>
 <script>
 	function newEvent() {
 		// redirect to new event page, possibly through ajax
+		window.location = "event_new.php";
 	}
 </script>
+
+
+	<h1>welcome to scheduler app</h1>
+	<div id = container>
+	<button onClick=newEvent()> schedule new event</button>
+
+	<!-- list of existing events here -->
+		<div id = event_list>
+			list of existing events will go here
+			<?php include('events.php') or die('php backend: list still doesnt work'); ?>
+
+		</div>
+	
+	</div>
+
 </body>
 </html>
